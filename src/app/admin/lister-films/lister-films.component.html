@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped">
+    <tr> <th>Id</th><th>Nom</th> <th>Description</th> </tr>
+    <tbody *ngFor="let film of tabFilms; let index=index">
+        <tr>
+        <td> {{film.id}} </td>
+        <td> {{film.nom}}</td>
+        <td> {{film.description}}</td>
+        <td> <button type="button" (click)="confirmAndDelete(index)"  class="btn btn-danger">
+            supprimer </button>
+
+            <button type="button" [routerLink]="['/admin/voir',film.id]"  class="btn btn-info">
+              voir </button>
+        </td>
+        <td><a class="btn btn-warning" [routerLink]="['/admin/update',film.id]">Edit</a></td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
